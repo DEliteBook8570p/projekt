@@ -119,7 +119,7 @@ public class DALFurnitori {
             conn = DBConnection.getConnection();
             PreparedStatement ps = conn.prepareStatement("call selectAll_furnitori");
             ResultSet result = ps.executeQuery();
-            ArrayList<Furnitori> konsumatoretList = new ArrayList<>();
+            ArrayList<Furnitori> furnitoretList = new ArrayList<>();
             
             while(result.next()){
                 Furnitori furnitori = new Furnitori();
@@ -130,12 +130,12 @@ public class DALFurnitori {
                 furnitori.setRegjioni(result.getString("regjioni"));
                 furnitori.setShteti(result.getString("shteti"));
                 furnitori.setKodiPostar(result.getString("kodiPostar"));
-                furnitori.setNumriTelefonit(result.getString("numriTelefonit"));
+                furnitori.setNumriTelefonit(result.getString("nrTelefonit"));
                 furnitori.setEmaili(result.getString("emaili"));
                 furnitori.setNrFiskal(result.getInt("nrFiskal"));
-                konsumatoretList.add(furnitori);
+                furnitoretList.add(furnitori);
             }
-            return konsumatoretList;
+            return furnitoretList;
         }catch(Exception ex){
             throw new Exception("DALFurnitori:selectAll()", ex);
         }finally{

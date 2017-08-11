@@ -126,9 +126,6 @@ public class Furnitori {
             return false;
         }
         final Furnitori other = (Furnitori) obj;
-        if (this.furnitoriId != other.furnitoriId) {
-            return false;
-        }
         if (this.nrFiskal != other.nrFiskal) {
             return false;
         }
@@ -158,6 +155,8 @@ public class Furnitori {
         }
         return true;
     }
+
+    
 
     @Override
     public String toString() {

@@ -114,7 +114,7 @@ public class KycuAdmin extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnKycuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnKycuActionPerformed
-      FormaKryesore f=new FormaKryesore();
+      JFormaKryesore f=new JFormaKryesore();
       f.setVisible(true);
     }//GEN-LAST:event_btnKycuActionPerformed
 

@@ -25,10 +25,15 @@ public class BLFurnitori {
         return DALFurnitori.select(idFurnitori);
     }
 
-    public static boolean furnitoriExist(int id)throws Exception {
+    public static boolean furnitoriExist(Furnitori f)throws Exception {
         try {
-            Furnitori a = select(id);
-            return a != null;
+            ArrayList <Furnitori> a = selectAll();
+            for(int i=0;i<a.size();i++)
+            {
+                if(a.get(i).equals(f))
+                    return true;
+            }
+            return false;
         } catch (Exception ex) {
             throw new Exception("BLFurnitori,furnitoriExist()"+ex);
         }
