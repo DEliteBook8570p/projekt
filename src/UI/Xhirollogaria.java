@@ -47,9 +47,7 @@ public class Xhirollogaria extends javax.swing.JFrame {
 
         jLabel4.setText("Lloji i karteles:");
 
-        cmbLlojiKarteles.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Visa", "Master", "Discover", "Capital One", "Network" }));
-
-        CmbEmriBankes.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Reiffeisen", "Pro Credit", "Teb", "NLB", "BPB", " ", " " }));
+        CmbEmriBankes.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " " }));
 
         btnRuaj.setText("Ruaj");
 
@@ -61,6 +59,11 @@ public class Xhirollogaria extends javax.swing.JFrame {
         });
 
         txtNumriXhiroLlogarise.setText("   ");
+        txtNumriXhiroLlogarise.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtNumriXhiroLlogariseKeyPressed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -115,6 +118,12 @@ public class Xhirollogaria extends javax.swing.JFrame {
        Xhirollogaria xh=new Xhirollogaria();
        xh.setVisible(false);
     }//GEN-LAST:event_btnMbyllActionPerformed
+
+    private void txtNumriXhiroLlogariseKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNumriXhiroLlogariseKeyPressed
+        char c=evt.getKeyChar();
+       if(!Character.isDigit(c))
+           evt.consume();
+    }//GEN-LAST:event_txtNumriXhiroLlogariseKeyPressed
 
     /**
      * @param args the command line arguments

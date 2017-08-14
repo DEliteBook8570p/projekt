@@ -104,13 +104,7 @@
     <Component class="javax.swing.JComboBox" name="cmbLlojiKarteles">
       <Properties>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-          <StringArray count="5">
-            <StringItem index="0" value="Visa"/>
-            <StringItem index="1" value="Master"/>
-            <StringItem index="2" value="Discover"/>
-            <StringItem index="3" value="Capital One"/>
-            <StringItem index="4" value="Network"/>
-          </StringArray>
+          <StringArray count="0"/>
         </Property>
       </Properties>
       <AuxValues>
@@ -120,14 +114,8 @@
     <Component class="javax.swing.JComboBox" name="CmbEmriBankes">
       <Properties>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-          <StringArray count="7">
-            <StringItem index="0" value="Reiffeisen"/>
-            <StringItem index="1" value="Pro Credit"/>
-            <StringItem index="2" value="Teb"/>
-            <StringItem index="3" value="NLB"/>
-            <StringItem index="4" value="BPB"/>
-            <StringItem index="5" value=" "/>
-            <StringItem index="6" value=" "/>
+          <StringArray count="1">
+            <StringItem index="0" value=" "/>
           </StringArray>
         </Property>
       </Properties>
@@ -152,6 +140,9 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="   "/>
       </Properties>
+      <Events>
+        <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtNumriXhiroLlogariseKeyPressed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>
