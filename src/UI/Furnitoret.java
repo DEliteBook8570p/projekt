@@ -118,6 +118,11 @@ public class Furnitoret extends javax.swing.JFrame {
         jLabel11.setText("Fshij ne baze te FurnitoriID:");
 
         txtFshiNeBazeID.setText(" ");
+        txtFshiNeBazeID.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtFshiNeBazeIDActionPerformed(evt);
+            }
+        });
 
         btnFshij.setText("Fshij");
 
@@ -129,6 +134,11 @@ public class Furnitoret extends javax.swing.JFrame {
         });
 
         btnReseto.setText("Reseto");
+        btnReseto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnResetoActionPerformed(evt);
+            }
+        });
 
         jLabel1.setText("Kodi Postar");
 
@@ -179,9 +189,8 @@ public class Furnitoret extends javax.swing.JFrame {
                         .addGap(13, 13, 13)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(btnFshij, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(jLabel11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(txtFshiNeBazeID)))
+                            .addComponent(jLabel11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(txtFshiNeBazeID))
                         .addGap(20, 20, 20))))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
@@ -233,10 +242,11 @@ public class Furnitoret extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(txtFshiNeBazeID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnReseto, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnShto, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnFshij, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnFshij, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(btnReseto, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnShto, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
@@ -261,10 +271,10 @@ public class Furnitoret extends javax.swing.JFrame {
             f.setNumriTelefonit(txtNrTelefonit.getText());
             f.setEmaili(txtEmail.getText());
             f.setNrFiskal(Integer.parseInt(txtNrFiskal.getText()));
-            if (BL.BLFurnitori.furnitoriExist(f)) {
+            if (BL.BLFurnitori.furnitoriExist(f)) {  //
                 JOptionPane.showMessageDialog(this, "Furnitori Egziston!");
             }
-            else{
+          else{
                 BL.BLFurnitori.insert(f);
                 JOptionPane.showMessageDialog(this, "Furnitori u shtua me sukses!");
             }
@@ -274,6 +284,28 @@ public class Furnitoret extends javax.swing.JFrame {
         }
 
     }//GEN-LAST:event_btnShtoActionPerformed
+
+    private void txtFshiNeBazeIDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtFshiNeBazeIDActionPerformed
+      String text = txtFshiNeBazeID.getText();
+    if(text != null) {
+        if(!text.matches("[0-9]*")) {
+            txtFshiNeBazeID.setText(" ");  }}
+    }//GEN-LAST:event_txtFshiNeBazeIDActionPerformed
+
+    private void btnResetoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnResetoActionPerformed
+   txtEmriKompanise.setText(" ");
+   txtAdresa.setText("");
+   txtEmail.setText("");
+   txtFshiNeBazeID.setText("");
+   txtKodiPostar.setText("");
+   txtNrFiskal.setText("");
+   txtNrTelefonit.setText("");
+   txtQyteti.setText("");
+   txtRegjioni.setText("");
+   txtShteti.setText("");
+   txtFshiNeBazeID.setText("");
+   
+    }//GEN-LAST:event_btnResetoActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnFshij;

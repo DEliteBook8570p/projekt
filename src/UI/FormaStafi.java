@@ -143,10 +143,18 @@ public class FormaStafi extends javax.swing.JFrame {
         jLabel12.setText("Fshij bazuar ne ID:");
 
         txtFshijBazuarID.setText(" ");
+        txtFshijBazuarID.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtFshijBazuarIDActionPerformed(evt);
+            }
+        });
 
-        txtAdresa.setText("jTextField1");
-
-        cmbPozita.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        txtAdresa.setText(" ");
+        txtAdresa.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtAdresaActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -297,9 +305,9 @@ public class FormaStafi extends javax.swing.JFrame {
             f.setEmriPerdoruesit(txtEmriPerdoruesit.getText());
             f.setMbiemriPerdoruesit(txtMbiemriPerdoruesit.getText());
             f.setPozita((String) cmbPozita.getSelectedItem());
-            java.sql.Date dl=convertJavaDateToSqlDate(cmbDataLindjes.getDate());
+            java.sql.Date dl = convertJavaDateToSqlDate(cmbDataLindjes.getDate());
             f.setDataLindjes(dl);
-            java.sql.Date dp=convertJavaDateToSqlDate(cmbDataPunsimit.getDate());
+            java.sql.Date dp = convertJavaDateToSqlDate(cmbDataPunsimit.getDate());
             f.setDataPunsimit(dp);
             System.out.println(dp);
             f.setAdresa(txtAdresa.getText());
@@ -307,7 +315,7 @@ public class FormaStafi extends javax.swing.JFrame {
             f.setNumriTelefonit(txtNrTelefonit.getText());
             f.setEmaili(txtEmail.getText());
             if (BL.BLStafi.stafiExist(f)) {
-                JOptionPane.showMessageDialog(this, "Stafi Egziston!");
+                JOptionPane.showMessageDialog(this, "Stafi Ekziston!");
             } else {
                 BL.BLStafi.insert(f);
                 JOptionPane.showMessageDialog(this, "Stafi u shtua me sukses!");
@@ -317,6 +325,19 @@ public class FormaStafi extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, ex);
         }
     }//GEN-LAST:event_btnShtoActionPerformed
+
+    private void txtAdresaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtAdresaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtAdresaActionPerformed
+
+    private void txtFshijBazuarIDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtFshijBazuarIDActionPerformed
+        String text = txtFshijBazuarID.getText();
+        if (text != null) {
+            if (!text.matches("[0-9]*")) {
+                txtFshijBazuarID.setText(" ");
+            }
+        }
+    }//GEN-LAST:event_txtFshijBazuarIDActionPerformed
 
     /**
      * @param args the command line arguments

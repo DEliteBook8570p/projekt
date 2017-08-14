@@ -2,6 +2,35 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group/>
+        <group>
+            <file>file:/C:/Users/INFO%20PC/Documents/NetBeansProjects/Stoku2/.git/config</file>
+            <file>file:/C:/Users/INFO%20PC/Documents/NetBeansProjects/Stoku2/src/BL/BLLlogariaBankare.java</file>
+            <file>file:/C:/Users/INFO%20PC/Documents/NetBeansProjects/Stoku2/src/UI/Konsumatoret.java</file>
+            <file>file:/C:/Users/INFO%20PC/Documents/NetBeansProjects/Stoku2/src/BO/Artikulli.java</file>
+            <file>file:/C:/Users/INFO%20PC/Documents/NetBeansProjects/Stoku2/src/DAL/DALFurnitori.java</file>
+            <file>file:/C:/Users/INFO%20PC/Documents/NetBeansProjects/Stoku2/src/depoApplication/DepoApp.java</file>
+            <file>file:/C:/Users/INFO%20PC/Documents/NetBeansProjects/Stoku2/src/BL/BLFurnitori.java</file>
+            <file>file:/C:/Users/INFO%20PC/Documents/NetBeansProjects/Stoku2/src/UI/Stoku.java</file>
+            <file>file:/C:/Users/INFO%20PC/Documents/NetBeansProjects/Stoku2/src/DAL/DALStoqet.java</file>
+            <file>file:/C:/Users/INFO%20PC/Documents/NetBeansProjects/Stoku2/src/BL/BLFatura.java</file>
+            <file>file:/C:/Users/INFO%20PC/Documents/NetBeansProjects/Stoku2/src/UI/Xhirollogaria.java</file>
+            <file>file:/C:/Users/INFO%20PC/Documents/NetBeansProjects/Stoku2/src/BL/BLStafi.java</file>
+            <file>file:/C:/Users/INFO%20PC/Documents/NetBeansProjects/Stoku2/src/BO/Stafi.java</file>
+            <file>file:/C:/Users/INFO%20PC/Documents/NetBeansProjects/Stoku2/src/BL/BLKonsumatori.java</file>
+            <file>file:/C:/Users/INFO%20PC/Documents/NetBeansProjects/Stoku2/src/BO/Furnitori.java</file>
+            <file>file:/C:/Users/INFO%20PC/Documents/NetBeansProjects/Stoku2/src/DAL/DBConnection.java</file>
+            <file>file:/C:/Users/INFO%20PC/Documents/NetBeansProjects/Stoku2/src/BL/BLStoqet.java</file>
+            <file>file:/C:/Users/INFO%20PC/Documents/NetBeansProjects/Stoku2/src/UI/Artikujt.java</file>
+            <file>file:/C:/Users/INFO%20PC/Documents/NetBeansProjects/Stoku2/src/UI/JFormaKryesore.java</file>
+            <file>file:/C:/Users/INFO%20PC/Documents/NetBeansProjects/Stoku2/src/UI/KycuAdmin.java</file>
+            <file>file:/C:/Users/INFO%20PC/Documents/NetBeansProjects/Stoku2/src/BL/BLBrendi.java</file>
+            <file>file:/C:/Users/INFO%20PC/Documents/NetBeansProjects/Stoku2/src/UI/Porosia.java</file>
+            <file>file:/C:/Users/INFO%20PC/Documents/NetBeansProjects/Stoku2/src/BL/BLPorosia.java</file>
+            <file>file:/C:/Users/INFO%20PC/Documents/NetBeansProjects/Stoku2/src/UI/Furnitoret.java</file>
+            <file>file:/C:/Users/INFO%20PC/Documents/NetBeansProjects/Stoku2/src/BL/BLArtikulli.java</file>
+            <file>file:/C:/Users/INFO%20PC/Documents/NetBeansProjects/Stoku2/src/DAL/DALLlogariaBankare.java</file>
+            <file>file:/C:/Users/INFO%20PC/Documents/NetBeansProjects/Stoku2/src/UI/Stafi.java</file>
+            <file>file:/C:/Users/INFO%20PC/Documents/NetBeansProjects/Stoku2/src/UI/Faturat.java</file>
+        </group>
     </open-files>
 </project-private>

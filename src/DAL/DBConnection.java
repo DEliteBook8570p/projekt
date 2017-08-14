@@ -8,7 +8,7 @@ public class DBConnection {
 
     public static Connection getConnection() throws SQLException {
         try {
-            DriverManager.registerDriver(new com.mysql.jdbc.Driver());
+          DriverManager.registerDriver(new com.mysql.jdbc.Driver());
             return DriverManager.getConnection(URL, User, Password);
         } catch (SQLException sqlex) {
             throw new SQLException("DBConnection:getConnection() Nuk mund te lidhet me baze!");

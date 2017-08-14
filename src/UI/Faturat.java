@@ -36,19 +36,20 @@ public class Faturat extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
         txtFaturaID = new javax.swing.JTextField();
         txtSasia = new javax.swing.JTextField();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
+        txtCmimiNjesi = new javax.swing.JTextField();
+        txtZbritja = new javax.swing.JTextField();
         txtShuma = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
-        jTextField4 = new javax.swing.JTextField();
-        jTextField5 = new javax.swing.JTextField();
-        jTextField6 = new javax.swing.JTextField();
+        txtTotali = new javax.swing.JTextField();
+        txtKonsumatoriID = new javax.swing.JTextField();
+        txtArtikulliID = new javax.swing.JTextField();
         jLabel11 = new javax.swing.JLabel();
         txtStafiID = new javax.swing.JTextField();
         txtRuaj = new javax.swing.JButton();
         txtMbylle = new javax.swing.JButton();
+        dtDataFaturimit = new org.jdesktop.swingx.JXDatePicker();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -69,12 +70,32 @@ public class Faturat extends javax.swing.JFrame {
         txtFaturaID.setText(" ");
 
         txtSasia.setText(" ");
+        txtSasia.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtSasiaActionPerformed(evt);
+            }
+        });
 
-        jTextField1.setText("  ");
+        txtCmimiNjesi.setText("  ");
+        txtCmimiNjesi.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtCmimiNjesiActionPerformed(evt);
+            }
+        });
 
-        jTextField2.setText("  ");
+        txtZbritja.setText("  ");
+        txtZbritja.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtZbritjaActionPerformed(evt);
+            }
+        });
 
         txtShuma.setText("  ");
+        txtShuma.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtShumaActionPerformed(evt);
+            }
+        });
 
         jLabel8.setText("Totali:");
 
@@ -82,15 +103,41 @@ public class Faturat extends javax.swing.JFrame {
 
         jLabel10.setText("ArtikulliID:");
 
-        jTextField4.setText(" ");
+        txtTotali.setText(" ");
+        txtTotali.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtTotaliActionPerformed(evt);
+            }
+        });
 
-        jTextField5.setText(" ");
+        txtKonsumatoriID.setText(" ");
+        txtKonsumatoriID.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtKonsumatoriIDActionPerformed(evt);
+            }
+        });
 
-        jTextField6.setText(" ");
+        txtArtikulliID.setText(" ");
+        txtArtikulliID.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtArtikulliIDActionPerformed(evt);
+            }
+        });
 
         jLabel11.setText("StafiID:");
 
+        txtStafiID.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtStafiIDActionPerformed(evt);
+            }
+        });
+
         txtRuaj.setText("Ruaj");
+        txtRuaj.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtRuajActionPerformed(evt);
+            }
+        });
 
         txtMbylle.setText("Mbylle");
 
@@ -108,8 +155,8 @@ public class Faturat extends javax.swing.JFrame {
                         .addComponent(jLabel1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(jTextField1, javax.swing.GroupLayout.DEFAULT_SIZE, 96, Short.MAX_VALUE)
-                            .addComponent(jTextField2)
+                            .addComponent(txtCmimiNjesi, javax.swing.GroupLayout.DEFAULT_SIZE, 96, Short.MAX_VALUE)
+                            .addComponent(txtZbritja)
                             .addComponent(txtShuma))
                         .addGap(73, 73, 73)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -124,16 +171,18 @@ public class Faturat extends javax.swing.JFrame {
                                     .addComponent(jLabel3)
                                     .addComponent(jLabel4))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(txtRuaj)
-                                    .addComponent(txtSasia, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                        .addComponent(txtRuaj)
+                                        .addComponent(txtSasia, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(dtDataFaturimit, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel2)
                                 .addGap(48, 48, 48)
                                 .addComponent(txtFaturaID, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 34, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 32, Short.MAX_VALUE)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel6, javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addComponent(jLabel7, javax.swing.GroupLayout.Alignment.TRAILING)
@@ -146,9 +195,9 @@ public class Faturat extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(jTextField4, javax.swing.GroupLayout.DEFAULT_SIZE, 88, Short.MAX_VALUE)
-                        .addComponent(jTextField5)
-                        .addComponent(jTextField6))
+                        .addComponent(txtTotali, javax.swing.GroupLayout.DEFAULT_SIZE, 88, Short.MAX_VALUE)
+                        .addComponent(txtKonsumatoriID)
+                        .addComponent(txtArtikulliID))
                     .addComponent(txtStafiID, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)))
         );
         layout.setVerticalGroup(
@@ -160,24 +209,25 @@ public class Faturat extends javax.swing.JFrame {
                     .addComponent(jLabel2)
                     .addComponent(jLabel5)
                     .addComponent(txtFaturaID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtCmimiNjesi, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel8)
-                    .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(39, 39, 39)
+                    .addComponent(txtTotali, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(38, 38, 38)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
                     .addComponent(jLabel6)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtZbritja, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel9)
-                    .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(39, 39, 39)
+                    .addComponent(txtKonsumatoriID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(dtDataFaturimit, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(38, 38, 38)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
                     .addComponent(txtSasia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel7)
                     .addComponent(txtShuma, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel10)
-                    .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtArtikulliID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(33, 33, 33)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel11)
@@ -191,6 +241,76 @@ public class Faturat extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void txtSasiaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtSasiaActionPerformed
+        String text = txtSasia.getText();
+        if (text != null) {
+            if (!text.matches("[0-9]*")) {
+                txtSasia.setText(" ");
+            }
+        }
+
+    }//GEN-LAST:event_txtSasiaActionPerformed
+
+    private void txtCmimiNjesiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCmimiNjesiActionPerformed
+        String text = txtCmimiNjesi.getText();
+        if (text != null) {
+            if (!text.matches("[0-9]*")) {
+                txtCmimiNjesi.setText(" ");
+            }
+        }
+
+    }//GEN-LAST:event_txtCmimiNjesiActionPerformed
+
+    private void txtZbritjaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtZbritjaActionPerformed
+        String text = txtZbritja.getText();
+        if (text != null) {
+            if (!text.matches("[0-9]*")) {
+                txtZbritja.setText(" ");
+            }
+    }//GEN-LAST:event_txtZbritjaActionPerformed
+    }
+    private void txtShumaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtShumaActionPerformed
+
+        String text = txtShuma.getText();
+        if (text != null) {
+            if (!text.matches("[0-9]*")) {
+                txtShuma.setText(" ");
+            }
+        }
+    }//GEN-LAST:event_txtShumaActionPerformed
+
+    private void txtTotaliActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTotaliActionPerformed
+     String text = txtTotali.getText();
+    if(text != null) {
+        if(!text.matches("[0-9]*")) {
+            txtTotali.setText(" ");  }}
+    }//GEN-LAST:event_txtTotaliActionPerformed
+
+    private void txtKonsumatoriIDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtKonsumatoriIDActionPerformed
+        String text = txtKonsumatoriID.getText();
+    if(text != null) {
+        if(!text.matches("[0-9]*")) {
+            txtKonsumatoriID.setText(" ");  }}
+    }//GEN-LAST:event_txtKonsumatoriIDActionPerformed
+
+    private void txtArtikulliIDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtArtikulliIDActionPerformed
+        String text = txtArtikulliID.getText();
+    if(text != null) {
+        if(!text.matches("[0-9]*")) {
+            txtArtikulliID.setText(" "); }} 
+    }//GEN-LAST:event_txtArtikulliIDActionPerformed
+
+    private void txtStafiIDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtStafiIDActionPerformed
+         String text = txtStafiID.getText();
+    if(text != null) {
+        if(!text.matches("[0-9]*")) {
+            txtStafiID.setText(" ");  }}
+    }//GEN-LAST:event_txtStafiIDActionPerformed
+
+    private void txtRuajActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtRuajActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtRuajActionPerformed
 
     /**
      * @param args the command line arguments
@@ -228,6 +348,7 @@ public class Faturat extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private org.jdesktop.swingx.JXDatePicker dtDataFaturimit;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -239,16 +360,16 @@ public class Faturat extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
-    private javax.swing.JTextField jTextField6;
+    private javax.swing.JTextField txtArtikulliID;
+    private javax.swing.JTextField txtCmimiNjesi;
     private javax.swing.JTextField txtFaturaID;
+    private javax.swing.JTextField txtKonsumatoriID;
     private javax.swing.JButton txtMbylle;
     private javax.swing.JButton txtRuaj;
     private javax.swing.JTextField txtSasia;
     private javax.swing.JTextField txtShuma;
     private javax.swing.JTextField txtStafiID;
+    private javax.swing.JTextField txtTotali;
+    private javax.swing.JTextField txtZbritja;
     // End of variables declaration//GEN-END:variables
 }
