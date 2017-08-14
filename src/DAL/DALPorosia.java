@@ -7,6 +7,9 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 public class DALPorosia {
+    
+    
+    
     public static void insert(Porosia porosia) throws Exception{
         Connection conn = null;
         try{

@@ -31,10 +31,8 @@ public class Konsumatoret extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        txtKonsumatoriID = new javax.swing.JTextField();
         txtEmriKonsumatorit = new javax.swing.JTextField();
         txtMbiemriKonsumatorit = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
@@ -53,7 +51,7 @@ public class Konsumatoret extends javax.swing.JFrame {
         jButton2 = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         tblKonsumatori = new javax.swing.JTable();
-        jButton3 = new javax.swing.JButton();
+        btnReseto = new javax.swing.JButton();
         jLabel11 = new javax.swing.JLabel();
         txtFshijNeBazeTeID = new javax.swing.JTextField();
         jLabel12 = new javax.swing.JLabel();
@@ -66,13 +64,9 @@ public class Konsumatoret extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setText("KonsumatoriID:");
-
         jLabel3.setText("Emri i konsumatorit:");
 
         jLabel4.setText("Mbiemri i konsumatorit:");
-
-        txtKonsumatoriID.setText(" ");
 
         txtEmriKonsumatorit.setText("  ");
 
@@ -124,12 +118,22 @@ public class Konsumatoret extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(tblKonsumatori);
 
-        jButton3.setText("Reseto");
+        btnReseto.setText("Reseto");
+        btnReseto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnResetoActionPerformed(evt);
+            }
+        });
 
         jLabel11.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
         jLabel11.setText("Fshij ne baze te ID:");
 
         txtFshijNeBazeTeID.setText("  ");
+        txtFshijNeBazeTeID.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtFshijNeBazeTeIDKeyTyped(evt);
+            }
+        });
 
         jLabel12.setText("NR.Telefonit:");
 
@@ -155,26 +159,16 @@ public class Konsumatoret extends javax.swing.JFrame {
                         .addComponent(jScrollPane1)
                         .addContainerGap())
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel4)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(txtMbiemriKonsumatorit))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel3)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(txtEmriKonsumatorit))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel1)
-                                .addGap(35, 35, 35)
-                                .addComponent(txtKonsumatoriID, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(12, 12, 12)
+                        .addComponent(jLabel3)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txtEmriKonsumatorit, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(19, 19, 19)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(95, 95, 95)
                                 .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(btnReseto, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                 .addGap(52, 52, 52)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -231,19 +225,18 @@ public class Konsumatoret extends javax.swing.JFrame {
                                     .addComponent(txtNrTelefonit)
                                     .addComponent(txtEmaili))
                                 .addGap(21, 21, 21))))))
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jLabel4)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(txtMbiemriKonsumatorit, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(69, 69, 69)
-                        .addComponent(jLabel1))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(63, 63, 63)
-                        .addComponent(txtKonsumatoriID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGap(16, 16, 16)
+                        .addGap(28, 28, 28)
                         .addComponent(jLabel14)
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -252,9 +245,7 @@ public class Konsumatoret extends javax.swing.JFrame {
                             .addComponent(jLabel8)
                             .addComponent(txtShteti, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel12)
-                            .addComponent(txtNrTelefonit, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
+                            .addComponent(txtNrTelefonit, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(42, 42, 42)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel6)
@@ -272,21 +263,21 @@ public class Konsumatoret extends javax.swing.JFrame {
                             .addComponent(jLabel2)
                             .addComponent(txtEmaili, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(57, 57, 57)
+                        .addGap(73, 73, 73)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel3)
                             .addComponent(txtEmriKonsumatorit, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(47, 47, 47)
+                        .addGap(59, 59, 59)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel4)
                             .addComponent(txtMbiemriKonsumatorit, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGap(12, 12, 12)
+                .addGap(20, 20, 20)
                 .addComponent(jLabel11)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(txtFshijNeBazeTeID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(27, 27, 27)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnReseto, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnFshij, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(29, 29, 29)
@@ -323,11 +314,33 @@ public class Konsumatoret extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, ex);
         }
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void txtFshijNeBazeTeIDKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtFshijNeBazeTeIDKeyTyped
+        char c=evt.getKeyChar();
+       if(!Character.isDigit(c))
+           evt.consume();
+    }//GEN-LAST:event_txtFshijNeBazeTeIDKeyTyped
+
+    private void btnResetoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnResetoActionPerformed
+        txtAdresa.setText("");
+        txtEmaili.setText("");
+        txtEmriBiznesit.setText("");
+        txtEmriKonsumatorit.setText("");
+        txtFshijNeBazeTeID.setText("");
+        txtKodiPostar.setText("");
+        txtLlogariaBankare.setText("");
+        txtMbiemriKonsumatorit.setText("");
+        txtNrTelefonit.setText("");
+        txtQyteti.setText("");
+        txtRegjioni.setText("");
+       
+        
+    }//GEN-LAST:event_btnResetoActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnFshij;
+    private javax.swing.JButton btnReseto;
     private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
@@ -349,7 +362,6 @@ public class Konsumatoret extends javax.swing.JFrame {
     private javax.swing.JTextField txtEmriKonsumatorit;
     private javax.swing.JTextField txtFshijNeBazeTeID;
     private javax.swing.JTextField txtKodiPostar;
-    private javax.swing.JTextField txtKonsumatoriID;
     private javax.swing.JTextField txtLlogariaBankare;
     private javax.swing.JTextField txtMbiemriKonsumatorit;
     private javax.swing.JTextField txtNrTelefonit;

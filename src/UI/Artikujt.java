@@ -5,6 +5,9 @@
  */
 package UI;
 
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+
 /**
  *
  * @author INFO PC
@@ -29,7 +32,6 @@ public class Artikujt extends javax.swing.JFrame {
 
         jScrollPane1 = new javax.swing.JScrollPane();
         tblArtikujt = new javax.swing.JTable();
-        jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
@@ -38,7 +40,6 @@ public class Artikujt extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
-        txtArtikulliID = new javax.swing.JTextField();
         txtEmriArtikullit = new javax.swing.JTextField();
         jLabel10 = new javax.swing.JLabel();
         txtCmimiShitjes = new javax.swing.JTextField();
@@ -73,9 +74,6 @@ public class Artikujt extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(tblArtikujt);
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
-        jLabel1.setText("ArtikulliID:");
-
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
         jLabel2.setText("EmriArtikullit:");
 
@@ -97,25 +95,39 @@ public class Artikujt extends javax.swing.JFrame {
         jLabel9.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
         jLabel9.setText("Porosia:");
 
-        txtArtikulliID.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtArtikulliIDActionPerformed(evt);
-            }
-        });
-
         txtEmriArtikullit.setText("  ");
 
         jLabel10.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
         jLabel10.setText("Furnitori:");
 
         txtCmimiShitjes.setText("  ");
+        txtCmimiShitjes.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                txtCmimiShitjesMouseClicked(evt);
+            }
+        });
+        txtCmimiShitjes.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtCmimiShitjesKeyTyped(evt);
+            }
+        });
 
         txtCmimiBlerjes.setText(" ");
+        txtCmimiBlerjes.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtCmimiBlerjesKeyTyped(evt);
+            }
+        });
 
         txtIMEInumri.setText(" ");
         txtIMEInumri.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtIMEInumriActionPerformed(evt);
+            }
+        });
+        txtIMEInumri.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtIMEInumriKeyTyped(evt);
             }
         });
 
@@ -129,14 +141,29 @@ public class Artikujt extends javax.swing.JFrame {
 
         btnReseto.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
         btnReseto.setText("Reseto");
+        btnReseto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnResetoActionPerformed(evt);
+            }
+        });
 
         btnFshij.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
         btnFshij.setText("Fshij");
+        btnFshij.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnFshijActionPerformed(evt);
+            }
+        });
 
         txtFshijMeID.setText(" ");
         txtFshijMeID.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtFshijMeIDActionPerformed(evt);
+            }
+        });
+        txtFshijMeID.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtFshijMeIDKeyTyped(evt);
             }
         });
 
@@ -158,19 +185,15 @@ public class Artikujt extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                .addGap(27, 27, 27)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(txtEmriArtikullit, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(txtArtikulliID, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel3)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(dtGarancioni, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGap(29, 29, 29)
+                                .addComponent(dtGarancioni, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel2)
+                                .addGap(18, 18, 18)
+                                .addComponent(txtEmriArtikullit, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(43, 43, 43)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
@@ -229,41 +252,44 @@ public class Artikujt extends javax.swing.JFrame {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel8)
                     .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel8)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel12)
-                                .addGap(8, 8, 8)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jLabel1)
-                                    .addComponent(txtArtikulliID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel4)
-                                    .addComponent(txtCmimiShitjes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addGap(29, 29, 29)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jComboBox1))))
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(32, 32, 32)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jLabel2)
-                                    .addComponent(txtEmriArtikullit, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel5)
-                                    .addComponent(txtCmimiBlerjes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(18, 18, 18)))))
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel10)
-                    .addComponent(jComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(jLabel12)
+                                        .addGap(8, 8, 8)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                            .addComponent(jLabel4)
+                                            .addComponent(txtCmimiShitjes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                        .addGap(29, 29, 29)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                            .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                            .addComponent(jComboBox1))))
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(32, 32, 32)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                            .addComponent(jLabel5)
+                                            .addComponent(txtCmimiBlerjes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                            .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGap(18, 18, 18)))))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel10)
+                            .addComponent(jComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(51, 51, 51)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel2)
+                            .addComponent(txtEmriArtikullit, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGap(15, 15, 15)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -292,16 +318,16 @@ public class Artikujt extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnShtoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnShtoActionPerformed
-    
-    }//GEN-LAST:event_btnShtoActionPerformed
+  
+           
 
+    }//GEN-LAST:event_btnShtoActionPerformed
+    
+    
+    
     private void txtIMEInumriActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtIMEInumriActionPerformed
-       String text = txtIMEInumri.getText();
-    if(text != null) {
-        if(!text.matches("[0-9]*")) {
-            txtIMEInumri.setText(" ");                
-        }
-    }
+     
+    
   
     }//GEN-LAST:event_txtIMEInumriActionPerformed
 
@@ -309,9 +335,52 @@ public class Artikujt extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtFshijMeIDActionPerformed
 
-    private void txtArtikulliIDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtArtikulliIDActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtArtikulliIDActionPerformed
+    private void txtCmimiShitjesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtCmimiShitjesMouseClicked
+      String text = txtCmimiShitjes.getText();
+    if(text != null) {
+        if(!text.matches("[0-9]*")) {
+        //    txtArtikulliID.setText(" ");  
+              if(!txtCmimiShitjes.getText().equals(text))
+              {
+  JOptionPane.showMessageDialog(null, "Cmimi i shitjes duhet te permbaje vetem shifra");}}}
+    }//GEN-LAST:event_txtCmimiShitjesMouseClicked
+
+    private void txtFshijMeIDKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtFshijMeIDKeyTyped
+       char c=evt.getKeyChar();
+       if(!Character.isDigit(c))
+           evt.consume();
+    }//GEN-LAST:event_txtFshijMeIDKeyTyped
+
+    private void txtCmimiShitjesKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCmimiShitjesKeyTyped
+      char c=evt.getKeyChar();
+       if(!Character.isDigit(c))
+           evt.consume();
+    }//GEN-LAST:event_txtCmimiShitjesKeyTyped
+
+    private void txtCmimiBlerjesKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCmimiBlerjesKeyTyped
+        char c=evt.getKeyChar();
+       if(!Character.isDigit(c))
+           evt.consume();
+    }//GEN-LAST:event_txtCmimiBlerjesKeyTyped
+
+    private void txtIMEInumriKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtIMEInumriKeyTyped
+     char c=evt.getKeyChar();
+       if(!Character.isDigit(c))
+           evt.consume();
+    }//GEN-LAST:event_txtIMEInumriKeyTyped
+
+    private void btnResetoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnResetoActionPerformed
+    //  txtArtikulliID.setText("");
+      txtCmimiBlerjes.setText("");
+      txtCmimiShitjes.setText("");
+      txtEmriArtikullit.setText("");
+      txtFshijMeID.setText("");
+      txtIMEInumri.setText("");
+    }//GEN-LAST:event_btnResetoActionPerformed
+
+    private void btnFshijActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFshijActionPerformed
+      
+    }//GEN-LAST:event_btnFshijActionPerformed
     
     /**
      * @param args the command line arguments
@@ -360,7 +429,6 @@ public class Artikujt extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JComboBox<String> jComboBox3;
     private javax.swing.JComboBox<String> jComboBox4;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
@@ -375,7 +443,6 @@ public class Artikujt extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable tblArtikujt;
-    private javax.swing.JTextField txtArtikulliID;
     private javax.swing.JTextField txtCmimiBlerjes;
     private javax.swing.JTextField txtCmimiShitjes;
     private javax.swing.JTextField txtEmriArtikullit;

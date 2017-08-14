@@ -123,6 +123,11 @@ public class Furnitoret extends javax.swing.JFrame {
                 txtFshiNeBazeIDActionPerformed(evt);
             }
         });
+        txtFshiNeBazeID.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtFshiNeBazeIDKeyTyped(evt);
+            }
+        });
 
         btnFshij.setText("Fshij");
 
@@ -306,6 +311,12 @@ public class Furnitoret extends javax.swing.JFrame {
    txtFshiNeBazeID.setText("");
    
     }//GEN-LAST:event_btnResetoActionPerformed
+
+    private void txtFshiNeBazeIDKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtFshiNeBazeIDKeyTyped
+        char c=evt.getKeyChar();
+       if(!Character.isDigit(c))
+           evt.consume();
+    }//GEN-LAST:event_txtFshiNeBazeIDKeyTyped
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnFshij;

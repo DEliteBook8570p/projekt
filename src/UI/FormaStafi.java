@@ -336,6 +336,7 @@ public class FormaStafi extends javax.swing.JFrame {
             if (!text.matches("[0-9]*")) {
                 txtFshijBazuarID.setText(" ");
             }
+           
         }
     }//GEN-LAST:event_txtFshijBazuarIDActionPerformed
 
