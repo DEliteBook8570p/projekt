@@ -97,6 +97,12 @@ public class Artikujt extends javax.swing.JFrame {
         jLabel9.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
         jLabel9.setText("Porosia:");
 
+        txtArtikulliID.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtArtikulliIDActionPerformed(evt);
+            }
+        });
+
         txtEmriArtikullit.setText("  ");
 
         jLabel10.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
@@ -128,6 +134,11 @@ public class Artikujt extends javax.swing.JFrame {
         btnFshij.setText("Fshij");
 
         txtFshijMeID.setText(" ");
+        txtFshijMeID.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtFshijMeIDActionPerformed(evt);
+            }
+        });
 
         jLabel11.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
         jLabel11.setText("Fshij ne baze te ArtikulliID:");
@@ -293,6 +304,14 @@ public class Artikujt extends javax.swing.JFrame {
     }
   
     }//GEN-LAST:event_txtIMEInumriActionPerformed
+
+    private void txtFshijMeIDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtFshijMeIDActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtFshijMeIDActionPerformed
+
+    private void txtArtikulliIDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtArtikulliIDActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtArtikulliIDActionPerformed
     
     /**
      * @param args the command line arguments
