@@ -15,7 +15,7 @@ public class DALKonsumatori {
         Connection conn = null;
         try{
             conn = DBConnection.getConnection();
-            CallableStatement cs = conn.prepareCall("call insert_konsumatori(?,?,?,?,?,?,?,?,?,?)");
+            CallableStatement cs = conn.prepareCall("call insert_konsumatori(?,?,?,?,?,?,?,?,?,?,?)");
             cs.setString(1,konsumatori.getEmriKonsumatorit());
             cs.setString(2,konsumatori.getMbiemriKonsumatorit());
             cs.setString(3,konsumatori.getEmriBiznesit());
@@ -26,6 +26,7 @@ public class DALKonsumatori {
             cs.setString(8,konsumatori.getKodiPostar());
             cs.setString(9,konsumatori.getNumriTelefonit());
             cs.setString(10,konsumatori.getEmaili());
+            cs.setInt(11,konsumatori.getLlogariaBankare_llogariaBankareId());
             
             
             cs.execute();
@@ -135,7 +136,7 @@ public class DALKonsumatori {
                 konsumatori.setShteti(result.getString("shteti"));
                 konsumatori.setRegjioni(result.getString("regjioni"));
                 konsumatori.setKodiPostar(result.getString("kodiPostar"));
-                konsumatori.setNumriTelefonit(result.getString("numriTelefonit"));
+                konsumatori.setNumriTelefonit(result.getString("nrTelefonit"));
                 konsumatori.setEmaili(result.getString("emaili"));
                 konsumatoretList.add(konsumatori);
             }

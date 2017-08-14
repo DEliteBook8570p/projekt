@@ -25,12 +25,17 @@ public class BLKonsumatori {
         return DALKonsumatori.select(idKonsumatori);
     }
 
-    public static boolean konsumatoriExist(int id)throws Exception {
+        public static boolean konsumatoriExist(Konsumatori f)throws Exception {
         try {
-            Konsumatori a = select(id);
-            return a != null;
+            ArrayList <Konsumatori> a = selectAll();
+            for(int i=0;i<a.size();i++)
+            {
+                if(a.get(i).equals(f))
+                    return true;
+            }
+            return false;
         } catch (Exception ex) {
-            throw new Exception("BLKonsumatori,konsumatoriExist()"+ex);
+            throw new Exception("BLKonsumatori.konsumatoriExist()"+ex);
         }
     }
 }
