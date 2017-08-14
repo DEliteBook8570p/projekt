@@ -129,16 +129,16 @@ public class DALStafi {
                 stafi.setMbiemriPerdoruesit(result.getString("mbiemriPerdoruesit"));
                 stafi.setPozita(result.getString("pozita"));
                 stafi.setDataLindjes(result.getDate("dataLindjes"));
-                stafi.setDataPunsimit(result.getDate("dataPunsimit"));
+                stafi.setDataPunsimit(result.getDate("dataPunesimit"));
                 stafi.setAdresa(result.getString("adresa"));
                 stafi.setQyteti(result.getString("qyteti"));
-                stafi.setNumriTelefonit(result.getString("numriTelefonit"));
+                stafi.setNumriTelefonit(result.getString("nrTelefonit"));
                 stafi.setEmaili(result.getString("emaili"));
                 stafiList.add(stafi);
             }
             return stafiList;
         }catch(Exception ex){
-            throw new Exception("DALStafi:selectAll()", ex);
+            throw new Exception("DALStafi:selectAll()"+ ex);
         }finally{
             if(conn != null){
                 conn.close();

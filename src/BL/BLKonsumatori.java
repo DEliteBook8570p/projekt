@@ -3,6 +3,7 @@ package BL;
 import java.util.ArrayList;
 import BO.Konsumatori;
 import DAL.DALKonsumatori;
+
 public class BLKonsumatori {
 
     public static void insert(Konsumatori konsumatori) throws Exception {
@@ -25,17 +26,17 @@ public class BLKonsumatori {
         return DALKonsumatori.select(idKonsumatori);
     }
 
-        public static boolean konsumatoriExist(Konsumatori f)throws Exception {
+    public static boolean konsumatoriExist(Konsumatori f) throws Exception {
         try {
-            ArrayList <Konsumatori> a = selectAll();
-            for(int i=0;i<a.size();i++)
-            {
-                if(a.get(i).equals(f))
+            ArrayList<Konsumatori> a = selectAll();
+            for (int i = 0; i < a.size(); i++) {
+                if (a.get(i).equals(f)) {
                     return true;
+                }
             }
             return false;
         } catch (Exception ex) {
-            throw new Exception("BLKonsumatori.konsumatoriExist()"+ex);
+            throw new Exception("BLKonsumatori.konsumatoriExist()" + ex);
         }
     }
 }

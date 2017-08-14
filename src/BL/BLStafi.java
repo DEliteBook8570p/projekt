@@ -25,12 +25,17 @@ public class BLStafi {
         return DALStafi.select(idStafi);
     }
 
-    public static boolean stafiExist(int id)throws Exception {
+    public static boolean stafiExist(Stafi f) throws Exception {
         try {
-            Stafi a = select(id);
-            return a != null;
+            ArrayList<Stafi> a = selectAll();
+            for (int i = 0; i < a.size(); i++) {
+                if (a.get(i).equals(f)) {
+                    return true;
+                }
+            }
+            return false;
         } catch (Exception ex) {
-            throw new Exception("BLStafi,stafiExist()"+ex);
+            throw new Exception("BLStafi.stafiExist()" + ex);
         }
     }
 }

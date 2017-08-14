@@ -136,7 +136,7 @@ public class JFormaKryesore extends javax.swing.JFrame {
     }//GEN-LAST:event_mnFaturatMouseClicked
 
     private void mnStafiMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_mnStafiMouseClicked
-    Stafi s=new Stafi();
+    FormaStafi s=new FormaStafi();
     s.setVisible(true);
     }//GEN-LAST:event_mnStafiMouseClicked
 
