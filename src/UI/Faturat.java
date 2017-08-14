@@ -325,7 +325,12 @@ public class Faturat extends javax.swing.JFrame {
     }//GEN-LAST:event_txtRuajActionPerformed
 
     private void btnResetoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnResetoActionPerformed
-    
+txtSasia.setText("");
+txtShuma.setText("");
+txtCmimiNjesi.setText("");
+txtZbritja.setText("");
+txtTotali.setText(" ");
+
     }//GEN-LAST:event_btnResetoActionPerformed
 
     /**
